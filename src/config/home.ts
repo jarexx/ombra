@@ -121,7 +121,7 @@ export const homeContent = {
     eyebrow: "05 - Reserve",
     heading: ["Twelve seats.", "Two seatings.", "One evening at a time."],
     body: "Bookings open the first Monday of each month for the following month. A deposit of EUR100 per guest secures your seat and is fully credited to your bill.",
-    formTitle: "Request a table",
+    formTitle: "Request a call",
     confirmation: "We confirm every request personally within 24 hours.",
   },
   footer: {

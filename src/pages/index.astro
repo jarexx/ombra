@@ -8,7 +8,7 @@ import { siteConfig } from "../config/site";
 import chefImage from "../assets/chef.webp";
 import conceptImage from "../assets/concept.webp";
 import detailImage from "../assets/detail.webp";
-import heroImage from "../assets/hero.webp";
+import heroImage from "../assets/folio.webp";
 import interiorImage from "../assets/interior.webp";
 import menuImage from "../assets/menu.webp";
 import wineImage from "../assets/wine.webp";
@@ -17,7 +17,7 @@ const siteUrl = Astro.site ?? new URL("http://localhost:4321");
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Restaurant",
+  "@type": "Graphic/Web Designer",
   name: siteConfig.name,
   description: siteConfig.description,
   url: new URL(Astro.url.pathname, siteUrl).href,
@@ -53,8 +53,8 @@ const structuredData = {
         class="media-fill"
         src={heroImage}
         alt="Chef hands finishing a small ceramic plate beside a live wood fire"
-        width={1024}
-        height={1536}
+        width={667}
+        height={1000}
         quality={92}
         loading="eager"
         decoding="sync"
@@ -67,7 +67,9 @@ const structuredData = {
             <p class="label-eyebrow reveal">{homeContent.hero.eyebrow}</p>
             <h1 id="hero-title" class="hero-title display reveal reveal-delay-1">
               {homeContent.hero.title[0]}<br />
-              <span class="display-italic" style="color: var(--ember);">{homeContent.hero.title[1]}</span><br />
+              <span class="display-italic" style="color: var(--ember);"
+                >{homeContent.hero.title[1]}</span
+              ><br />
               {homeContent.hero.title[2]}
             </h1>
           </div>
@@ -75,22 +77,25 @@ const structuredData = {
           <div class="hero-copy reveal reveal-delay-2">
             <p>{homeContent.hero.body}</p>
             <div class="hero-actions">
-              <a class="button-link" href="#reserve">{homeContent.hero.action} <span aria-hidden="true">-&gt;</span></a>
+              <a class="button-link" href="#reserve"
+                >{homeContent.hero.action} <span aria-hidden="true">-&gt;</span></a
+              >
             </div>
           </div>
         </div>
       </div>
-
     </section>
 
     <section class="marquee" aria-label="Ombra values">
       <div class="marquee-track">
-        {[...homeContent.marquee, ...homeContent.marquee].map((item) => (
-          <span>
-            {item}
-            <b aria-hidden="true">*</b>
-          </span>
-        ))}
+        {
+          [...homeContent.marquee, ...homeContent.marquee].map((item) => (
+            <span>
+              {item}
+              <b aria-hidden="true">*</b>
+            </span>
+          ))
+        }
       </div>
     </section>
 
@@ -119,7 +124,9 @@ const structuredData = {
               loading="lazy"
             />
           </div>
-          <figcaption class="label-eyebrow" style="margin-top: 1rem;">{homeContent.concept.caption}</figcaption>
+          <figcaption class="label-eyebrow" style="margin-top: 1rem;">
+            {homeContent.concept.caption}
+          </figcaption>
         </figure>
 
         <div class="fire-block reveal">
@@ -134,7 +141,9 @@ const structuredData = {
           </div>
           <div class="quote-block">
             <blockquote>"{homeContent.concept.quote}"</blockquote>
-            <p class="label-eyebrow" style="margin-top: 1.5rem;">- {homeContent.concept.quoteByline}</p>
+            <p class="label-eyebrow" style="margin-top: 1.5rem;">
+              - {homeContent.concept.quoteByline}
+            </p>
           </div>
         </div>
       </div>
@@ -147,7 +156,9 @@ const structuredData = {
         </div>
         <h2 class="section-heading display reveal">
           {homeContent.tasting.heading[0]}<br />
-          <span class="display-italic" style="color: var(--ember);">{homeContent.tasting.heading[1]}</span><br />
+          <span class="display-italic" style="color: var(--ember);"
+            >{homeContent.tasting.heading[1]}</span
+          ><br />
           {homeContent.tasting.heading[2]}
         </h2>
 
@@ -169,14 +180,19 @@ const structuredData = {
         </aside>
 
         <ol class="course-list">
-          {homeContent.tasting.courses.map((course) => (
-            <li class="course reveal">
-              <span class="course-number">{course.number}</span>
-              <h3>{course.title} {course.accent && <span class="display-italic">{course.accent}</span>}</h3>
-              <p>{course.body}</p>
-              <span class="pairing">{course.pairing}</span>
-            </li>
-          ))}
+          {
+            homeContent.tasting.courses.map((course) => (
+              <li class="course reveal">
+                <span class="course-number">{course.number}</span>
+                <h3>
+                  {course.title}{" "}
+                  {course.accent && <span class="display-italic">{course.accent}</span>}
+                </h3>
+                <p>{course.body}</p>
+                <span class="pairing">{course.pairing}</span>
+              </li>
+            ))
+          }
         </ol>
       </div>
     </section>
@@ -188,7 +204,10 @@ const structuredData = {
         </div>
         <h2 class="section-heading display reveal">
           {homeContent.chef.heading.line1}<br />
-          <span class="display-italic" style="color: var(--ember);">{homeContent.chef.heading.accent}</span> {homeContent.chef.heading.rest}
+          <span class="display-italic" style="color: var(--ember);"
+            >{homeContent.chef.heading.accent}</span
+          >
+          {homeContent.chef.heading.rest}
         </h2>
 
         <div class="chef-media image-frame aspect-4-5 reveal">
@@ -207,12 +226,14 @@ const structuredData = {
           </p>
           <div class="hairline" style="margin-block: 2.5rem;"></div>
           <ul class="timeline">
-            {homeContent.chef.timeline.map((row) => (
-              <li>
-                <time datetime={row.year}>{row.year}</time>
-                <span>{row.text}</span>
-              </li>
-            ))}
+            {
+              homeContent.chef.timeline.map((row) => (
+                <li>
+                  <time datetime={row.year}>{row.year}</time>
+                  <span>{row.text}</span>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
@@ -231,7 +252,10 @@ const structuredData = {
         <div class="interior-caption">
           <p class="label-eyebrow">{homeContent.interior.eyebrow}</p>
           <h2 class="display">
-            {homeContent.interior.heading.lead} <span class="display-italic" style="color: var(--ember);">{homeContent.interior.heading.accent}</span>
+            {homeContent.interior.heading.lead}
+            <span class="display-italic" style="color: var(--ember);"
+              >{homeContent.interior.heading.accent}</span
+            >
             {homeContent.interior.heading.rest}
           </h2>
         </div>
@@ -239,12 +263,14 @@ const structuredData = {
 
       <div class="container section">
         <div class="feature-grid">
-          {homeContent.interior.features.map((feature) => (
-            <section>
-              <p class="label-eyebrow">{feature.title}</p>
-              <p>{feature.body}</p>
-            </section>
-          ))}
+          {
+            homeContent.interior.features.map((feature) => (
+              <section>
+                <p class="label-eyebrow">{feature.title}</p>
+                <p>{feature.body}</p>
+              </section>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -266,7 +292,9 @@ const structuredData = {
           <p class="label-eyebrow reveal">{homeContent.reservation.eyebrow}</p>
           <h2 class="display reveal">
             {homeContent.reservation.heading[0]}<br />
-            <span class="display-italic" style="color: var(--ember);">{homeContent.reservation.heading[1]}</span><br />
+            <span class="display-italic" style="color: var(--ember);"
+              >{homeContent.reservation.heading[1]}</span
+            ><br />
             {homeContent.reservation.heading[2]}
           </h2>
           <p class="reveal reveal-delay-1">{homeContent.reservation.body}</p>
@@ -282,15 +310,24 @@ const structuredData = {
           </div>
         </div>
 
-        <form class="reservation-form reveal" action={siteConfig.reservation.formAction} method={siteConfig.reservation.method} enctype="text/plain">
+        <form
+          class="reservation-form reveal"
+          action={siteConfig.reservation.formAction}
+          method={siteConfig.reservation.method}
+          enctype="text/plain"
+        >
           <p class="label-eyebrow">{homeContent.reservation.formTitle}</p>
           <div class="form-grid">
             <div class="form-field--full">
-              <label class="label-eyebrow" for="name">Full name <span aria-hidden="true">*</span></label>
+              <label class="label-eyebrow" for="name"
+                >Full name <span aria-hidden="true">*</span></label
+              >
               <input id="name" name="name" autocomplete="name" required />
             </div>
             <div>
-              <label class="label-eyebrow" for="email">Email <span aria-hidden="true">*</span></label>
+              <label class="label-eyebrow" for="email"
+                >Email <span aria-hidden="true">*</span></label
+              >
               <input id="email" name="email" type="email" autocomplete="email" required />
             </div>
             <div>
@@ -301,33 +338,47 @@ const structuredData = {
               <label class="label-eyebrow" for="date">Date <span aria-hidden="true">*</span></label>
               <input id="date" name="date" type="date" required />
             </div>
-            <div>
+            <!-- <div>
               <label class="label-eyebrow" for="guests">Guests</label>
               <select id="guests" name="guests">
-                {["2", "3", "4", "5", "6"].map((option) => <option value={option}>{option}</option>)}
+                {
+                  ["2", "3", "4", "5", "6"].map((option) => (
+                    <option value={option}>{option}</option>
+                  ))
+                }
               </select>
-            </div>
+            </div> -->
             <div class="form-field--full">
-              <label class="label-eyebrow" for="time">Seating</label>
+              <label class="label-eyebrow" for="time">Hour</label>
               <select id="time" name="time">
                 {["19:30", "21:45"].map((option) => <option value={option}>{option}</option>)}
               </select>
             </div>
             <div class="form-field--full">
-              <label class="label-eyebrow" for="occasion">Special occasion</label>
+              <label class="label-eyebrow" for="occasion">What I need</label>
               <select id="occasion" name="occasion">
-                {["None", "Anniversary", "Birthday", "Engagement", "Just because"].map((option) => (
-                  <option value={option}>{option}</option>
-                ))}
+                {
+                  ["Logo", "Branding", "Animation", "Illustration", "Website", "Other"].map(
+                    (option) => <option value={option}>{option}</option>,
+                  )
+                }
               </select>
             </div>
             <div class="form-field--full">
-              <label class="label-eyebrow" for="note">A note for the kitchen</label>
-              <textarea id="note" name="note" rows="3" placeholder="Allergies, dietary needs, anything we should know."></textarea>
+              <label class="label-eyebrow" for="note">A note</label>
+              <textarea
+                id="note"
+                name="note"
+                rows="3"
+                placeholder="Additional details, anything we should know."></textarea>
             </div>
           </div>
-          <button class="form-button" type="submit">Request seat <span aria-hidden="true">-&gt;</span></button>
-          <p style="color: var(--muted-foreground); font-size: 0.85rem;">{homeContent.reservation.confirmation}</p>
+          <button class="form-button" type="submit"
+            >Send request <span aria-hidden="true">-&gt;</span></button
+          >
+          <p style="color: var(--muted-foreground); font-size: 0.85rem;">
+            {homeContent.reservation.confirmation}
+          </p>
         </form>
       </div>
     </section>

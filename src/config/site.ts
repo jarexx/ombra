@@ -12,11 +12,11 @@ export const siteConfig = {
     country: "Poland",
   },
   phone: "+48 607 738 846",
-  email: "[EMAIL_ADDRESS]",
+  email: "hello@jarek.design",
   nav: [
-    { label: "Concept", href: "#concept" },
-    { label: "Menu", href: "#menu" },
-    { label: "Chef", href: "#chef" },
+    { label: "What is SVG?", href: "#svg" },
+    { label: "Offer", href: "#offer" },
+    { label: "About Me", href: "#about" },
     { label: "Contact", href: "#contact" },
   ],
   reservation: {
@@ -31,20 +31,20 @@ export const siteConfig = {
     schema: {
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "09:00",
-      closes: "23:45",
+      closes: "17:00",
     },
   },
   restaurant: {
-    priceRange: "EUR245",
-    cuisine: ["Italian", "Seasonal tasting menu", "Wood-fired"],
+    priceRange: "$500",
+    cuisine: ["Graphic/Web Design"],
   },
   effects: {
     reveal: true,
   },
   social: [
-    { label: "Instagram", href: "https://www.instagram.com/" },
-    { label: "Journal", href: "https://substack.com/" },
-    { label: "Spotify", href: "https://open.spotify.com/" },
+    { label: "Instagram", href: "https://www.instagram.com/jarek.design" },
+    // { label: "Journal", href: "https://substack.com/" },
+    // { label: "Spotify", href: "https://open.spotify.com/" },
   ],
 } as const;
 
