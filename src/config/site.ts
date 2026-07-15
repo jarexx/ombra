@@ -17,7 +17,7 @@ export const siteConfig = {
     { label: "Concept", href: "#concept" },
     { label: "Menu", href: "#menu" },
     { label: "Chef", href: "#chef" },
-    { label: "Sala", href: "#interior" },
+    { label: "Contact", href: "#contact" },
   ],
   reservation: {
     formAction: "mailto:hello@jarek.design",
