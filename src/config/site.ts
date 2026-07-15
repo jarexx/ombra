@@ -17,6 +17,7 @@ export const siteConfig = {
     { label: "What is SVG?", href: "#svg" },
     { label: "Offer", href: "#offer" },
     { label: "About Me", href: "#about" },
+    { label: "Portfolio", href: "#portfolio" },
     { label: "Contact", href: "#contact" },
   ],
   reservation: {
