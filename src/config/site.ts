@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Jarek",
+  name: "JarekDesign",
   title: "Portfolio – graphic/web designer",
   description:
     "Jarek Sikorski's Portfolio – graphic/web designer.",
